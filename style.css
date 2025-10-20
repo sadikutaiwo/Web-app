@@ -1,0 +1,257 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: url('image/pexels-brakou-1723637.jpg') center/cover no-repeat fixed;
+            min-height: 100vh;
+            padding: 2rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .search-bar {
+            margin-left: 28rem;
+            width: 300px;
+            height: 50px;
+            border-radius: 50px;
+            border: none;
+            padding: 0 20px;
+            outline: none;
+            color: rgb(126, 121, 121);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .search-bar:hover {
+            width: 310px;
+            height: 55px;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+
+        .search-bar::placeholder {
+            color: #999;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar:hover::placeholder {
+            font-size: 1.1rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            padding-left: 1rem;
+            border-left: 4px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+        }
+
+        .app-card {
+            background: rgba(96, 96, 96, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem 1rem;
+            text-align: center;
+            width: 100%;
+            max-width: 200px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .app-card:hover::before {
+            opacity: 1;
+        }
+
+        .app-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .app-card:hover .app-icon {
+            transform: scale(1.15);
+        }
+
+        .app-name {
+            color: white;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Icon Colors */
+        .fa-globe { color: #121212; }
+        .fa-clock { color: #191a1b; }
+        .fa-calculator { color: #ff6b6b; }
+        .fa-coins { color: #FFD700; }
+        .fa-spell-check { color: #2f75a0; }
+        .fa-bitcoin-sign { color: #ffff00; }
+        .fa-book { color: #c56e6e; }
+        .fa-teamspeak { color: #7cb2de; }
+        .fa-chalkboard { color: #ffffff; }
+        .fa-language { color: #c26060; }
+        .fa-code { color: #51cf66; }
+        .fa-school { color: #FF8C00; }
+        .fa-square-web-awesome { color: #ffa94d; }
+        .fa-square-web-awesome-stroke { color: #f59f00; }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .search-bar {
+                margin-left: 14rem;
+                width: 250px;
+            }
+
+            .search-bar:hover {
+                width: 260px;
+            }
+
+            .apps-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 1rem;
+            }
+
+            .app-card {
+                padding: 1.5rem 0.5rem;
+                border-radius: 15px;
+                max-width: 120px;
+            }
+
+            .app-icon {
+                font-size: 2.5rem;
+            }
+
+            .app-name {
+                font-size: 0.85rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 650px){
+            .search-bar {
+                margin-left: 11rem;
+            }
+        }
+
+        @media (max-width: 550px){
+            .search-bar {
+                margin-left: 8rem;
+            }
+        }
+
+        @media (max-width: 450px){
+            .search-bar {
+                margin-left: 5rem;
+            }
+        }
+
+        @media (max-width: 375.33px){
+            .search-bar {
+                margin-left: 3rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1029.33px) {
+            .search-bar {
+                margin-left: 19rem;
+            }
+
+            .apps-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .app-card {
+                max-width: 140px;
+            }
+        }
